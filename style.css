@@ -1,0 +1,187 @@
+/* General resets and global settings */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'EB Garamond', serif;
+    background-color: black;
+    color: #f8f8f2;
+    line-height: 1.9;
+    font-size: 1.25em;
+    letter-spacing: 0.02em;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* =====================================
+     Homepage / Bookshelf View
+  ===================================== */
+  
+  .bookshelf-wrapper {
+    position: relative;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 10px 0;
+  }
+  
+  .base-img {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    display: block;
+  }
+  
+  .hotspot {
+    position: absolute;
+    z-index: 3;
+    cursor: pointer;
+    width: 100%;
+    background-color: transparent;
+  }
+  
+  
+  .resume { top: 18%; left: 68%; width: 5%; height: 40%; }
+  .about  { top: 20%; left: 74%; width: 5%; height: 45%; }
+  .projects { top: 23%; left: 80%; width: 4.5%; height: 34%; }
+  .contact  { top: 20%; left: 87%; width: 5.5%; height: 42%; }
+  
+  .glow-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    padding: 10px 0;
+  }
+  
+  .resume:hover ~ .resume-glow,
+  .about:hover ~ .about-glow,
+  .projects:hover ~ .projects-glow,
+  .contact:hover ~ .contact-glow {
+    opacity: 1;
+  }
+  
+  /* =====================================
+     Project Page Layout & Typography
+  ===================================== */
+  
+  .project-page {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 30px;
+    background-color: transparent;
+    color: #fff;
+    }
+      
+  
+  h1, h2, h3 {
+    font-weight: normal;
+  }
+  
+  h1.page-title {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #ffefd5;
+    margin-bottom: 0.3em;
+    border-bottom: 2px solid #444;
+    padding-bottom: 0.2em;
+  }
+  
+  h2.section-title {
+    font-size: 1.6em;
+    color: #ffe4b5;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.2em;
+    margin-bottom: 0.5em;
+  }
+  
+  h3.project-title {
+    font-size: 1em;
+    margin-top: 1em;
+    margin-bottom: 0.4em;
+    color: #ffd;
+  }
+  
+  p, li {
+    color: #f5f5f5;
+    font-size: 1.1em;
+    line-height: 1.75;
+  }
+  
+  a {
+    color: #ffd700;
+    text-decoration: underline;
+  }
+  
+  /* =====================================
+     Shared Back Button
+  ===================================== */
+  
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: black;
+    color: white;
+    font-family: 'EB Garamond', serif;
+    padding: 8px 14px;
+    border: 2px solid #d9c2a3;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+  }
+  
+  .back-button:hover {
+    background-color: #fce3c3;
+    transform: translateY(-1px);
+  }
+  
+  /* =====================================
+     Scroll Reveal Animations
+  ===================================== */
+  
+  .section {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid #d9c2a3;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .signature-image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
+  
+  .signature-image {
+    width: 280px;
+    height: auto;
+    animation: fadeIn 2s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  

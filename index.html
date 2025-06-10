@@ -4,94 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yaara Aybar</title>
-  <style>
-    .back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: #fef3e2;
-  color: #5a3e2b;
-  font-family: 'EB Garamond', serif;
-  padding: 8px 14px;
-  border: 2px solid #d9c2a3;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 1rem;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.back-button:hover {
-  background-color: #fce3c3;
-  transform: translateY(-1px);
-}
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background-color: black;
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 200px;
-    }
-
-    .bookshelf-wrapper {
-      position: relative;
-      width: 500px; /* same as your image dimensions */
-      height: 500px;
-    }
-
-    .base-img {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      display: block;
-    }
-
-    .hotspot {
-      position: absolute;
-      z-index: 3;
-      cursor: pointer;
-      width: 100%;
-      height: 100%;
-      background-color: transparent;
-    }
-
-    /* Position-specific hotspot zones */
-    .resume { top: 18%; left: 68%; width: 5%; height: 40%; }
-    .about  { top: 20%; left: 74%; width: 5%; height: 45%; }
-    .projects { top: 23%; left: 80%; width: 4.5%; height: 34%; }
-    .contact  { top: 20%; left: 87%; width: 5.5%; height: 42%; }
-
-    .glow-img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      z-index: 2;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-
-    /* Hover triggers for glow overlays */
-    .resume:hover ~ .resume-glow,
-    .about:hover ~ .about-glow,
-    .projects:hover ~ .projects-glow,
-    .contact:hover ~ .contact-glow {
-      opacity: 1;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="signature-image-container">
+    <img src="yaara-handwritten.png" alt="Yaara Aybar signature" class="signature-image" />
+  </div>  
+</div>
 
   <div class="bookshelf-wrapper">
     <!-- Main base image -->

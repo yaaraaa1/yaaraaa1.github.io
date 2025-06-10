@@ -2,46 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Yaara Aybar – Resume</title>
+  <title>Resume – Yaara Aybar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Garamond', serif;
-      background-color: #5a3e2b;
-      color: #222;
-      line-height: 1.6;
-      padding: 40px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.2em;
-    }
-
-    h2 {
-      margin-top: 2em;
-      font-size: 1.3em;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 0.3em;
-    }
-
-    p, li {
-      font-size: 1em;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <h1>~coming soon~</h1>
-  <a href="index.html" class="back-button" aria-label="Back to Bookshelf">📚 Back to Bookshelf</a>
+  <a href="index.html" class="back-button" aria-label="Back to Bookshelf">📚 Back</a>
+
+  <div class="project-page">
+    <h1 class="page-title">Resume</h1>
+
+    <div class="section">
+      <h2 class="section-title">Work Experience</h2>
+
+      <div>
+        <p><strong>Microsoft – Software Program Manager</strong><br>
+        <em>Aug 2024 – Present · Redmond, WA</em></p>
+        <ul>
+          <li>Manage software delivery for Surface, facilitating bug investigation and resolution</li>
+          <li>Lead partner discussions with Windows on bugs, features, and release coordination</li>
+        </ul>
+      </div>
+
+      <div>
+        <p><strong>Microsoft – Product Manager Intern</strong><br>
+        <em>Summer 2023</em></p>
+        <ul>
+          <li>Spearheaded early software stages for a Surface device as software PM lead</li>
+          <li>Led bug triage and oversaw handoff for critical firmware update</li>
+        </ul>
+      </div>
+
+      <div>
+        <p><strong>Microsoft – Explore Intern</strong><br>
+        <em>Summer 2022</em></p>
+        <ul>
+          <li>Published official onboarding instructions for Azure Usage Billing customers</li>
+          <li>Created the first complete breakdown of the billing pipeline</li>
+        </ul>
+      </div>
+
+      <div>
+        <p><strong>Juni Learning – Computer Science Instructor (Remote)</strong><br>
+        <em>Summer 2021</em></p>
+        <ul>
+          <li>Taught Java and Python to secondary school students in weekly live sessions</li>
+        </ul>
+      </div>
+
+      <div>
+        <p><strong>Fineberg Lab, Yale Psychiatry – Research Assistant</strong><br>
+        <em>Summer 2021 · New Haven, CT</em></p>
+        <ul>
+          <li>Conducted clinical study tasks, survey analysis, and brain scan administration</li>
+          <li>Supported scientific figure design for multiple published research papers</li>
+        </ul>
+      </div>
+    </div>
+    
+
+    <div class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <p><strong>Languages:</strong> Java, Python, HTML, SQL<br>
+         <strong>Tools:</strong> Azure DevOps, Git, Figma, Kusto, Excel</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Certifications</h2>
+      <ul>
+        <li>Microsoft Certified: Azure Fundamentals</li>
+        <li>Microsoft Certified: Azure AI Fundamentals</li>
+        <li>Microsoft Certified: Azure Data Fundamentals</li>
+        <li>Microsoft Certified: Power Platform Fundamentals</li>
+        <li>Learning Program Management</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Education</h2>
+      <p><strong>Yale College</strong> · B.S. in Cognitive Science (Graduated May 2024)<br>
+      Focus: Human-Computer Interaction<br>
+      Advanced Language Certificate in Hebrew</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Contact</h2>
+      <p><a href="mailto:yaara.aybar@outlook.com">yaara.aybar@outlook.com</a> · 
+         <a href="https://www.linkedin.com/in/yaara-aybar" target="_blank">LinkedIn</a></p>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 
 </body>
 </html>
