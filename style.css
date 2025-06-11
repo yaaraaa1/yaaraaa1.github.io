@@ -18,27 +18,23 @@
   ===================================== */
   
   .bookshelf-wrapper {
+    width: 100%;
+    max-width: 500px;
     position: relative;
-    width: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: auto;
     padding: 10px 0;
   }
   
   .base-img {
-    position: relative;
     width: 100%;
-    z-index: 1;
-    display: block;
+    height: auto;
   }
+  
   
   .hotspot {
     position: absolute;
     z-index: 3;
     cursor: pointer;
-    width: 100%;
     background-color: transparent;
   }
 
@@ -46,7 +42,6 @@
     outline: none; /* visually hidden */
   }
   
-
   .hotspot:focus::after {
     content: "Selected";
     position: absolute;
@@ -61,17 +56,12 @@
     clip-path: inset(100%); /* hides it visually */
   }
   
-
-
   a:focus,
 .back-button:focus {
   outline: 2px solid #ffd700;
   outline-offset: 3px;
 }
 
-  
-  
-  
   .resume { top: 18%; left: 68%; width: 5%; height: 40%; }
   .about  { top: 20%; left: 74%; width: 5%; height: 45%; }
   .projects { top: 23%; left: 80%; width: 4.5%; height: 34%; }
@@ -108,11 +98,6 @@
     background-color: transparent;
     color: #fff;
     }
-      
-  
-  h1, h2, h3 {
-    font-weight: normal;
-  }
   
   h1.page-title {
     font-size: 2.5em;
@@ -125,7 +110,7 @@
   
   h2.section-title {
     font-size: 1.6em;
-    color: #ffe4b5;
+    color: #ffd280;
     border-bottom: 1px solid black;
     padding-bottom: 0.2em;
     margin-bottom: 0.5em;
@@ -135,7 +120,7 @@
     font-size: 1em;
     margin-top: 1em;
     margin-bottom: 0.4em;
-    color: #ffd;
+    color: #fcd97b;
   }
   
   p, li {
@@ -226,5 +211,71 @@
   
   .skip-link:focus {
     top: 0;
+  }
+  
+  .focus-label {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffd700;
+    padding: 6px 10px;
+    font-size: 0.9em;
+    border-radius: 6px;
+    font-family: 'EB Garamond', serif;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .focus-label.visible {
+    opacity: 1;
+  }
+
+  .sr-only {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .section {
+      transition: none !important;
+      transform: none !important;
+    }
+  
+    .signature-image {
+      animation: none !important;
+    }
+  }
+  /* MAKE MORE MOBILE-FRIENDLY */
+  @media (max-width: 600px) {
+    .project-page {
+      padding: 30px 15px;
+    }
+    .page-title {
+      font-size: 1.25em;
+    }
+    h3.project-title {
+      line-height: 1.2;
+    }
+    h2.section-title {
+      font-size: 1.2em;
+      line-height: 1.2;
+    }
+    .signature-image {
+      width: 80%;
+    }
+    p, li {
+      font-size: 0.8em;
+      line-height: 1.2;
+    }
+    .back-button {
+      font-size: 0.9em;
+      padding: 6px 10px;
+      left: 10px;
+    }
   }
   

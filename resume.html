@@ -10,13 +10,10 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <a href="index.html" class="back-button" aria-label="Back to Bookshelf" tabindex="0">📚 Back</a>
-
-  <div class="project-page">
+  <main class = "project-page">
     <h1 class="page-title">Resume</h1>
-    <main class = "project-page">
     <div class="section">
       <h2 class="section-title">Work Experience</h2>
-
       <div>
         <p><strong>Microsoft – Software Program Manager</strong><br>
         <em>Aug 2024 – Present · Redmond, WA</em></p>
@@ -25,7 +22,6 @@
           <li>Lead partner discussions with Windows on bugs, features, and release coordination</li>
         </ul>
       </div>
-
       <div>
         <p><strong>Microsoft – Product Manager Intern</strong><br>
         <em>Summer 2023</em></p>
@@ -34,7 +30,6 @@
           <li>Led bug triage and oversaw handoff for critical firmware update</li>
         </ul>
       </div>
-
       <div>
         <p><strong>Microsoft – Explore Intern</strong><br>
         <em>Summer 2022</em></p>
@@ -43,7 +38,6 @@
           <li>Created the first complete breakdown of the billing pipeline</li>
         </ul>
       </div>
-
       <div>
         <p><strong>Juni Learning – Computer Science Instructor (Remote)</strong><br>
         <em>Summer 2021</em></p>
@@ -51,7 +45,6 @@
           <li>Taught Java and Python to secondary school students in weekly live sessions</li>
         </ul>
       </div>
-
       <div>
         <p><strong>Fineberg Lab, Yale Psychiatry – Research Assistant</strong><br>
         <em>Summer 2021 · New Haven, CT</em></p>
@@ -61,14 +54,11 @@
         </ul>
       </div>
     </div>
-    
-
     <div class="section">
       <h2 class="section-title">Technical Skills</h2>
       <p><strong>Languages:</strong> Java, Python, HTML, SQL<br>
          <strong>Tools:</strong> Azure DevOps, Git, Figma, Kusto, Excel</p>
     </div>
-
     <div class="section">
       <h2 class="section-title">Certifications</h2>
       <ul>
@@ -79,22 +69,18 @@
         <li>Learning Program Management</li>
       </ul>
     </div>
-
     <div class="section">
       <h2 class="section-title">Education</h2>
       <p><strong>Yale College</strong> · B.S. in Cognitive Science (Graduated May 2024)<br>
       Focus: Human-Computer Interaction<br>
       Advanced Language Certificate in Hebrew</p>
     </div>
-
     <div class="section">
       <h2 class="section-title">Contact</h2>
       <p><a href="mailto:yaara.aybar@outlook.com">yaara.aybar@outlook.com</a> · 
          <a href="https://www.linkedin.com/in/yaara-aybar" target="_blank">LinkedIn</a></p>
     </div>
   </main>
-  </div>
-
   <script>
     const observer = new IntersectionObserver(
       entries => {
@@ -107,11 +93,9 @@
       },
       { threshold: 0.1 }
     );
-
     document.querySelectorAll('.section').forEach(section => {
       observer.observe(section);
     });
   </script>
-
 </body>
 </html>

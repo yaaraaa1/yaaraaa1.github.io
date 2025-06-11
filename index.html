@@ -12,24 +12,45 @@
   <div class="signature-image-container">
     <img src="yaara-handwritten.png" alt="Yaara Aybar, handwritten" class="signature-image" />
   </div>  
-</div>
-
   <div class="bookshelf-wrapper">
-    <!-- Main base image -->
     <img src="bookshelf-base.png" alt="Brunette woman smiling with black sweater with a bookshelf background that has clickable sections for Resume, About, Projects, and Contact" class="base-img" />
-
     <!-- Invisible clickable hotspots -->
-    <a href="resume.html" class="hotspot resume" aria-label="Resume section" title="Resume" tabindex="0"></a>
-    <a href="about.html" class="hotspot about" aria-label="About section" title="About" tabindex="0"></a>
-    <a href="projects.html" class="hotspot projects" aria-label="Projects section" title="Projects" tabindex="0"></a>
-    <a href="https://www.linkedin.com/in/yaara-aybar" target="_blank" class="hotspot contact" aria-label="Contact (link to LinkedIn)" title="Contact" tabindex="0"></a>
-    
+    <a href="resume.html" class="hotspot resume" aria-label="Resume section"></a>
+    <a href="about.html" class="hotspot about" aria-label="About section"></a>
+    <a href="projects.html" class="hotspot projects" aria-label="Projects section"></a>
+    <a href="https://www.linkedin.com/in/yaara-aybar" target="_blank" class="hotspot contact" aria-label="Contact (link to LinkedIn)" tabindex="0"></a>
     <!-- Glow overlays (only show on hover) -->
     <img src="bookshelf-resume-glow.png" alt="Highlight glow effect over Resume section of bookshelf" class="glow-img resume-glow" />
     <img src="bookshelf-about-glow.png" alt="Highlight glow effect over About section of bookshelf" class="glow-img about-glow" />
     <img src="bookshelf-projects-glow.png" alt="Highlight glow effect over Projects section of bookshelf" class="glow-img projects-glow" />
     <img src="bookshelf-contact-glow.png" alt="Highlight glow effect over Contact section of bookshelf" class="glow-img contact-glow" />
   </div>
-
+  <div id="focusLabel" class="focus-label" aria-live="polite"></div>
+  <div id="sr-status" aria-live="polite" class="sr-only"></div>
 </body>
+
+<script>
+  const focusLabel = document.getElementById('focusLabel');
+  const hotspotMap = {
+    'resume': 'Resume',
+    'about': 'About',
+    'projects': 'Projects',
+    'contact': 'Contact'
+  };
+  document.querySelectorAll('.hotspot').forEach(hotspot => {
+    hotspot.addEventListener('focus', () => {
+      for (let cls in hotspotMap) {
+        if (hotspot.classList.contains(cls)) {
+          focusLabel.textContent = `Selected: ${hotspotMap[cls]}`;
+          focusLabel.classList.add('visible');
+          document.getElementById('sr-status').textContent = `Selected: ${hotspotMap[cls]}`;
+          return;
+        }
+      }
+    });
+    hotspot.addEventListener('blur', () => {
+      focusLabel.classList.remove('visible');
+    });
+  });
+</script>
 </html>
