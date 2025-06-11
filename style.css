@@ -41,6 +41,35 @@
     width: 100%;
     background-color: transparent;
   }
+
+  .hotspot:focus {
+    outline: none; /* visually hidden */
+  }
+  
+
+  .hotspot:focus::after {
+    content: "Selected";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: black;
+    color: white;
+    padding: 4px 6px;
+    font-size: 0.75em;
+    z-index: 100;
+    transform: translateY(-100%);
+    clip-path: inset(100%); /* hides it visually */
+  }
+  
+
+
+  a:focus,
+.back-button:focus {
+  outline: 2px solid #ffd700;
+  outline-offset: 3px;
+}
+
+  
   
   
   .resume { top: 18%; left: 68%; width: 5%; height: 40%; }
@@ -90,14 +119,14 @@
     font-weight: 600;
     color: #ffefd5;
     margin-bottom: 0.3em;
-    border-bottom: 2px solid #444;
+    border-bottom: 2px solid black;
     padding-bottom: 0.2em;
   }
   
   h2.section-title {
     font-size: 1.6em;
     color: #ffe4b5;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid black;
     padding-bottom: 0.2em;
     margin-bottom: 0.5em;
   }
@@ -184,4 +213,18 @@
     to { opacity: 1; transform: translateY(0); }
   }
   
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: black;
+    color: #ffd700;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+  }
+  
+  .skip-link:focus {
+    top: 0;
+  }
   

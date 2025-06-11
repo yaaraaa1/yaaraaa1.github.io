@@ -8,10 +8,11 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <a href="index.html" class="back-button" aria-label="Back to Bookshelf">📚 Back</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="index.html" class="back-button" aria-label="Back to Bookshelf" tabindex="0">📚 Back</a>
 
   <div class="project-page">
+  <main class="project-page">
     <h1 class="page-title">About Me</h1>
 
     <div class="section">
@@ -29,20 +30,10 @@
     <div class="section">
       <p>My favorite hobbies are painting, cycling, and solving mysteries—from escape rooms to cryptograms to reading murder mystery novels. I love finding challenging new projects to work on and opportunities to channel my creativity. I also love my dog Toffee, an adorable Norfolk Terrier currently residing in Las Vegas.</p>
     </div>
+  </main>
   </div>
 
-  <div class="cursor-dot"></div>
-  <div class="cursor-ping"></div>
-
   <script>
-    const dot = document.querySelector('.cursor-dot');
-    const ping = document.querySelector('.cursor-ping');
-
-    document.addEventListener('mousemove', e => {
-      dot.style.left = ping.style.left = e.clientX + 'px';
-      dot.style.top = ping.style.top = e.clientY + 'px';
-    });
-
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
